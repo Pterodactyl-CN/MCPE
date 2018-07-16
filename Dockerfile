@@ -17,6 +17,10 @@ RUN tar xvzf PHP_Linux-x86_64.tar.gz
 RUN mkdir /usr/local/PM_PHP
 RUN cp -R bin /usr/local/PM_PHP/
 RUN echo 'export PATH=/usr/local/PM_PHP/bin/php7/bin:$PATH' >> /etc/profile
+COPY ./libstdc++.so.6.0.22 /usr/local/lib64/libstdc++.so.6.0.22
+RUN  ln -sf /usr/local/lib64/libstdc++.so.6.0.22 /usr/local/lib/libstdc++.so.6
+COPY ./libstdc++.so.6.0.22 /usr/lib/libstdc++.so.6.0.22
+RUN  ln -sf /usr/lib/libstdc++.so.6.0.22 /usr/lib/libstdc++.so.6
 RUN source /etc/profile
 USER container
 ENV  USER container

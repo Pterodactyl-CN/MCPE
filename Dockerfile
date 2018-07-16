@@ -18,7 +18,6 @@ RUN mkdir /usr/local/PM_PHP
 RUN cp -R bin /usr/local/PM_PHP/
 RUN echo 'export PATH=/usr/local/PM_PHP/bin/php7/bin:$PATH' >> /etc/profile
 RUN source /etc/profile
-RUN rm -r bin
 USER container
 ENV  USER container
 ENV  HOME /home/container

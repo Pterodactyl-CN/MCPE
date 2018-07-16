@@ -27,6 +27,10 @@ RUN cp sg/ixed.7.2ts.lin /usr/local/PM_PHP/bin/php7/lib/php/extensions/ixed.7.2t
 RUN echo 'zend_extension=/usr/local/PM_PHP/bin/php7/lib/php/extensions/ioncube_loader_lin_7.2_ts.so' >> /usr/local/PM_PHP/bin/php7/bin/php.ini
 RUN echo 'zend_extension=/usr/local/PM_PHP/bin/php7/lib/php/extensions/ixed.7.2ts.lin' >> /usr/local/PM_PHP/bin/php7/bin/php.ini
 RUN echo 'export PATH=/usr/local/PM_PHP/bin/php7/bin:$PATH' >> /etc/profile
+COPY ./libstdc++.so.6.0.22 /usr/local/lib64/libstdc++.so.6.0.22
+RUN  ln -sf /usr/local/lib64/libstdc++.so.6.0.22 /usr/local/lib/libstdc++.so.6
+COPY ./libstdc++.so.6.0.22 /usr/lib/libstdc++.so.6.0.22
+RUN  ln -sf /usr/lib/libstdc++.so.6.0.22 /usr/lib/libstdc++.so.6
 RUN source /etc/profile
 RUN rm -r bin
 USER container

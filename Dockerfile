@@ -21,9 +21,9 @@ RUN mkdir sg
 RUN tar xvzf sg.tar.gz -C sg
 RUN wget -O ioncube.tar.gz https://downloads.ioncube.com/loader_downloads/ioncube_loaders_lin_x86-64.tar.gz
 RUN tar xvzf ioncube.tar.gz
+RUN mkdir -p /usr/local/PM_PHP/bin/php7/lib/php/extensions/
 RUN cp ioncube/ioncube_loader_lin_7.2_ts.so /usr/local/PM_PHP/bin/php7/lib/php/extensions/ioncube_loader_lin_7.2_ts.so
 RUN cp sg/ixed.7.2ts.lin /usr/local/PM_PHP/bin/php7/lib/php/extensions/ixed.7.2ts.lin
-RUN mkdir -p /usr/local/PM_PHP/bin/php7/lib/php/extensions/
 RUN echo 'zend_extension=/usr/local/PM_PHP/bin/php7/lib/php/extensions/ioncube_loader_lin_7.2_ts.so' >> /usr/local/PM_PHP/bin/php7/bin/php.ini
 RUN echo 'zend_extension=/usr/local/PM_PHP/bin/php7/lib/php/extensions/ixed.7.2ts.lin' >> /usr/local/PM_PHP/bin/php7/bin/php.ini
 RUN echo 'export PATH=/usr/local/PM_PHP/bin/php7/bin:$PATH' >> /etc/profile

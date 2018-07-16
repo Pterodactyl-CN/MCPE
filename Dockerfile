@@ -16,10 +16,10 @@ RUN wget https://jenkins.pmmp.io/job/PHP-7.2-Linux-x86_64/lastSuccessfulBuild/ar
 RUN tar xvzf PHP_Linux-x86_64.tar.gz 
 RUN mkdir /usr/local/PM_PHP
 RUN cp -R bin /usr/local/PM_PHP/
-RUN wget -O sg.tar.gz https://downloads.ioncube.com/loader_downloads/ioncube_loaders_lin_x86-64.tar.gz
+RUN wget -O sg.tar.gz https://www.sourceguardian.com/loaders/download/loaders.linux-x86_64.tar.gz 
 RUN mkdir sg 
 RUN tar xvzf sg.tar.gz -C sg
-RUN wget -O ioncube.tar.gz https://www.sourceguardian.com/loaders/download/loaders.linux-x86_64.tar.gz
+RUN wget -O ioncube.tar.gz https://downloads.ioncube.com/loader_downloads/ioncube_loaders_lin_x86-64.tar.gz
 RUN tar xvzf ionucube.tar.gz
 RUN cp ioncube/ioncube_loader_lin_7.2_ts.so /usr/local/PM_PHP/bin/php7/lib/php/extensions/ioncube_loader_lin_7.2_ts.so
 RUN cp sg/ixed.7.2ts.lin /usr/local/PM_PHP/bin/php7/lib/php/extensions/ixed.7.2ts.lin

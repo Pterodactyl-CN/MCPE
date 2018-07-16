@@ -20,7 +20,7 @@ RUN wget -O sg.tar.gz https://www.sourceguardian.com/loaders/download/loaders.li
 RUN mkdir sg 
 RUN tar xvzf sg.tar.gz -C sg
 RUN wget -O ioncube.tar.gz https://downloads.ioncube.com/loader_downloads/ioncube_loaders_lin_x86-64.tar.gz
-RUN tar xvzf ionucube.tar.gz
+RUN tar xvzf ioncube.tar.gz
 RUN cp ioncube/ioncube_loader_lin_7.2_ts.so /usr/local/PM_PHP/bin/php7/lib/php/extensions/ioncube_loader_lin_7.2_ts.so
 RUN cp sg/ixed.7.2ts.lin /usr/local/PM_PHP/bin/php7/lib/php/extensions/ixed.7.2ts.lin
 RUN echo 'zend_extension=/usr/local/PM_PHP/bin/php7/lib/php/extensions/ioncube_loader_lin_7.2_ts.so' >> /usr/local/PM_PHP/bin/php7/bin/php.ini

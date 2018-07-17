@@ -7,7 +7,7 @@ FROM        centos
 MAINTAINER  Misakacloud, <admin@misakacloud.cn>
 
 RUN yum update -y \
-    && yum install glibc -y
+    && yum install glibc wget curl python -y
 COPY ./libmvec.so /usr/lib64/libmvec.so
 RUN ln -sf /usr/lib64/libmvec.so /usr/lib64/libmvec.so.1
 RUN wget https://jenkins.pmmp.io/job/PHP-7.2-Linux-x86_64/lastSuccessfulBuild/artifact/PHP_Linux-x86_64.tar.gz

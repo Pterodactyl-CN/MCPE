@@ -19,6 +19,7 @@ RUN  ln -sf /usr/lib64/libstdc++.so.6.0.22 /usr/lib64/libstdc++.so.6
 COPY ./libstdc++.so.6.0.22 /usr/lib/libstdc++.so.6.0.22
 RUN  ln -sf /usr/lib/libstdc++.so.6.0.22 /usr/lib/libstdc++.so.6
 RUN source /etc/profile
+RUN ln -sf /usr/local/PM_PHP/bin/php7/bin/php /bin/php
 USER container
 ENV  USER container
 ENV  HOME /home/container

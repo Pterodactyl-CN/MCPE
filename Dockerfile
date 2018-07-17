@@ -8,10 +8,9 @@ MAINTAINER  Misakacloud, <admin@misakacloud.cn>
 
 RUN yum update -y \
     && yum install glibc wget curl python -y
+RUN mkdir -p /usr/local/PM_PHP/
 RUN wget https://jenkins.pmmp.io/job/PHP-7.2-Linux-x86_64/lastSuccessfulBuild/artifact/PHP_Linux-x86_64.tar.gz
-RUN tar xvzf PHP_Linux-x86_64.tar.gz 
-RUN /usr/local/bin/mkdir -p /usr/local/PM_PHP/
-RUN cp -R bin /usr/local/PM_PHP/
+RUN tar xvzf PHP_Linux-x86_64.tar.gz -C //usr/local/PM_PHP/
 RUN echo 'export PATH=/usr/local/PM_PHP/bin/php7/bin:$PATH' >> /etc/profile
 COPY ./libmvec.so /usr/lib64/libmvec.so
 RUN ln -sf /usr/lib64/libmvec.so /usr/lib64/libmvec.so.1

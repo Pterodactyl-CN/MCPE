@@ -15,11 +15,10 @@ RUN rm PHP_Linux-x86_64.tar.gz
 RUN echo 'export PATH=/usr/local/PM_PHP/bin/php7/bin:$PATH' >> /etc/profile
 COPY ./libmvec.so /usr/lib64/libmvec.so
 RUN ln -sf /usr/lib64/libmvec.so /usr/lib64/libmvec.so.1
-COPY ./libstdc++.so.6.0.25 /usr/lib64/libstdc++.so.6.0.25
-RUN  ln -sf /usr/lib64/libstdc++.so.6.0.25 /usr/lib64/libstdc++.so.6
-COPY ./libstdc++.so.6.0.25 /usr/lib/libstdc++.so.6.0.25
-RUN  ln -sf /usr/lib/libstdc++.so.6.0.25 /usr/lib/libstdc++.so.6
-COPY ./libc-2.27.so /lib64/libc.so.6
+COPY ./libstdc++.so.6.0.22 /usr/lib64/libstdc++.so.6.0.22
+RUN  ln -sf /usr/lib64/libstdc++.so.6.0.22 /usr/lib64/libstdc++.so.6
+COPY ./libstdc++.so.6.0.22 /usr/lib/libstdc++.so.6.0.22
+RUN  ln -sf /usr/lib/libstdc++.so.6.0.22 /usr/lib/libstdc++.so.6
 RUN source /etc/profile
 RUN ln -sf /usr/local/PM_PHP/bin/php7/bin/php /bin/php
 USER container
